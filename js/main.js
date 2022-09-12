@@ -1,11 +1,18 @@
 "use strict";
 import refs from "./refs.js";
+import inputToAsterisk from "./inputToAsterix.js";
 
 refs.inputs.forEach((e) => e.addEventListener("invalid", handleInvalid));
 
 //possible to change event to 'input' in order to not to wait for validation on losing focus, but trading off optimiztion
 refs.form.addEventListener("change", handleChange);
 refs.form.addEventListener("submit", handleSubmit);
+
+let passwordValue = "";
+
+inputToAsterisk(refs.form[3], (value) => {
+  passwordValue = value;
+});
 
 // add error on invalid input
 function handleInvalid(e) {
@@ -34,6 +41,8 @@ function handleSubmit(e) {
   e.preventDefault();
   const formData = new FormData(refs.form);
   const data = {};
-  formData.forEach((value, key) => (data[key] = value));
+  formData.forEach(
+    (value, key) => (data[key] = key === "Password" ? passwordValue : value)
+  );
   alert(JSON.stringify(data));
 }
