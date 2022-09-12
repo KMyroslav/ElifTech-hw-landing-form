@@ -1,0 +1,244 @@
+:root {
+  --primary-white-text: #ffffff;
+
+  --primary-red: rgb(255, 122, 122);
+  --primary-green: rgb(56, 204, 140);
+  --primary-green-active: rgba(56, 204, 140, 0.7);
+
+  --accent: rgb(96, 85, 165);
+  --accent-active: rgb(96, 75, 155);
+
+  --neutral-dark-blue: hsl(249, 10%, 26%);
+  --neutral-grayish-blue: hsl(246, 25%, 77%);
+
+  --primary-transition-style: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --primary-box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.1);
+  --secondary-inset-box-shadow: inset 0px -4px 0px 0px rgba(0, 0, 0, 0.1);
+  --primary-border-radius: 8px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--primary-white-text);
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: var(--primary-red);
+}
+
+.container {
+  padding: 96px 24px 66px 24px;
+}
+
+.btn {
+  text-align: center;
+  width: 100%;
+  border-radius: var(--primary-border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: var(--accent);
+  color: #ffffff;
+
+  transition: background-color var(--primary-transition-style);
+}
+
+a,
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+}
+
+.title {
+  margin-bottom: 25px;
+}
+
+.description {
+  line-height: 1.6;
+}
+
+.btn-subscription {
+  line-height: 1.6;
+
+  padding: 18px 66px;
+  margin-bottom: 23px;
+
+  box-shadow: var(--primary-box-shadow);
+}
+
+.btn-subscription:hover,
+.btn-subscription:focus {
+  background-color: var(--accent-active);
+}
+
+.form {
+  background-color: #ffffff;
+  border-radius: var(--primary-border-radius);
+  box-shadow: var(--primary-box-shadow);
+  padding: 25px;
+  padding-bottom: 28px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 17px 20px;
+
+  font-weight: 600;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--primary-border-radius);
+
+  transition: border var(--primary-transition-style);
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-wrapper::before {
+  content: "";
+  display: var(--iconDisplay, none);
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  background-image: url(./images/icon-error.svg);
+  height: 24px;
+  width: 24px;
+}
+
+.form-input:active,
+.form-input:hover,
+.form-input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+.input-error {
+  outline: 1px solid var(--primary-red);
+}
+
+.input-error::placeholder {
+  color: var(--primary-red);
+}
+
+.label-error {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--primary-red);
+
+  font-style: italic;
+  font-size: 11px;
+  text-align: right;
+}
+
+.form-btn-submit {
+  margin-bottom: 14px;
+  padding: 17px 20px;
+
+  font-weight: 500;
+  text-transform: uppercase;
+
+  box-shadow: var(--secondary-inset-box-shadow);
+  background-color: var(--primary-green);
+}
+
+.form-btn-submit:hover,
+.form-btn-submit:focus {
+  background-color: var(--primary-green-active);
+}
+
+.form-terms {
+  color: var(--neutral-grayish-blue);
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 0 14px;
+  text-align: center;
+}
+
+.form-terms-link {
+  font-weight: 700;
+  color: var(--primary-red);
+}
+
+@media screen and (max-width: 1159px) {
+  .title-wrapper {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  body {
+    background-image: url("./images/bg-intro-desktop.png");
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1120px;
+    height: 100%;
+
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .title-wrapper {
+    width: 500px;
+    margin-right: 70px;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 50px;
+    line-height: 1.22;
+  }
+
+  .form-wrapper {
+    width: 542px;
+  }
+
+  .form {
+    padding: 40px;
+    padding-bottom: 45px;
+  }
+
+  .form-input {
+    width: 100%;
+
+    padding: 17px 30px;
+  }
+}
