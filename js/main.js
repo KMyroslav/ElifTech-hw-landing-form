@@ -4,7 +4,7 @@ import refs from "./refs.js";
 refs.inputs.forEach((e) => e.addEventListener("invalid", handleInvalid));
 
 //possible to change event to 'input' in order to not to wait for validation on losing focus, but trading off optimiztion
-refs.form.addEventListener("input", handleChange);
+refs.form.addEventListener("change", handleChange);
 refs.form.addEventListener("submit", handleSubmit);
 
 // add error on invalid input
