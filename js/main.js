@@ -11,7 +11,7 @@ refs.form.addEventListener("submit", handleSubmit);
 function handleInvalid(e) {
   e.target.classList.add("input-error");
   e.target.parentNode.style.setProperty("--iconDisplay", "block");
-  if (e.target.name === "email") {
+  if (e.target.name === "Email") {
     e.target.placeholder = "email@example.com";
     e.target.nextElementSibling.innerHTML = `Looks like this is not an email`;
     return;
