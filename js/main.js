@@ -17,6 +17,7 @@ function handleInvalid(e) {
     return;
   }
   if (e.target.value.trim().length === 0) {
+    e.target.placeholder = "";
     e.target.nextElementSibling.innerHTML = `${e.target.name} cannot be empty`;
   }
 }
